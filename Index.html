@@ -1,260 +1,260 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SHINKAI — Vista sua melhor versão.</title>
-  <meta name="description" content="SHINKAI. Camisetas e moletons streetwear inspirados em anime. Roupas com atitude, estilo e qualidade." />
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHINKAI — Vista sua melhor versão.</title>
+    <meta name="description" content="SHINKAI. Camisetas e moletons streetwear inspirados em anime. Roupas com atitude, estilo e qualidade." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/components.css" />
-  <link rel="stylesheet" href="./css/home.css" />
-  <link rel="icon" href="./assets/img/logo.png" type="image/png" />
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="icon" href="./assets/img/logo.png" type="image/png" />
+    </head>
+    <body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="./index.html" class="logo" aria-label="SHINKAI — página inicial">
-        <span class="logo__title">SHINKAI</span>
-        <span class="logo__jp">シンカイ</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="navMenu" aria-label="Navegação principal">
-        <ul class="nav__list">
-          <li><a href="./index.html" class="nav__link" data-nav-link>Início</a></li>
-          <li><a href="./catalogo.html" class="nav__link" data-nav-link>Catálogo</a></li>
-          <li><a href="./sobre.html" class="nav__link" data-nav-link>Sobre</a></li>
-          <li><a href="./blog.html" class="nav__link" data-nav-link>Blog</a></li>
-          <li><a href="./contato.html" class="nav__link" data-nav-link>Contato</a></li>
-        </ul>
-      </nav>
-      <div class="header__actions">
-        <button class="icon-btn" id="searchToggle" aria-label="Buscar produtos" aria-haspopup="dialog">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <a href="./catalogo.html?view=favoritos" class="icon-btn" id="wishlistToggle" aria-label="Ver favoritos">
-          <i class="fa-solid fa-heart"></i>
-          <span class="badge" id="wishlistCount" hidden>0</span>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+        <a href="./index.html" class="logo" aria-label="SHINKAI — página inicial">
+            <span class="logo__title">SHINKAI</span>
+            <span class="logo__jp">シンカイ</span>
         </a>
-        <a href="./pages/login.html" class="icon-btn" aria-label="Entrar ou cadastrar">
-          <i class="fa-solid fa-user"></i>
-        </a>
-        <button class="icon-btn" id="cartToggle" aria-label="Abrir carrinho" aria-haspopup="dialog">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span class="badge" id="cartCount" hidden>0</span>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+            <span></span><span></span><span></span>
         </button>
-      </div>
+        <nav class="nav" id="navMenu" aria-label="Navegação principal">
+            <ul class="nav__list">
+            <li><a href="./index.html" class="nav__link" data-nav-link>Início</a></li>
+            <li><a href="./catalogo.html" class="nav__link" data-nav-link>Catálogo</a></li>
+            <li><a href="./sobre.html" class="nav__link" data-nav-link>Sobre</a></li>
+            <li><a href="./blog.html" class="nav__link" data-nav-link>Blog</a></li>
+            <li><a href="./contato.html" class="nav__link" data-nav-link>Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="icon-btn" id="searchToggle" aria-label="Buscar produtos" aria-haspopup="dialog">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="./catalogo.html?view=favoritos" class="icon-btn" id="wishlistToggle" aria-label="Ver favoritos">
+            <i class="fa-solid fa-heart"></i>
+            <span class="badge" id="wishlistCount" hidden>0</span>
+            </a>
+            <a href="./pages/login.html" class="icon-btn" aria-label="Entrar ou cadastrar">
+            <i class="fa-solid fa-user"></i>
+            </a>
+            <button class="icon-btn" id="cartToggle" aria-label="Abrir carrinho" aria-haspopup="dialog">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cartCount" hidden>0</span>
+            </button>
+        </div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- BUSCA -->
+    <div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="Buscar produtos" hidden>
+        <div class="search-panel__box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Buscar por anime, personagem ou produto…" autocomplete="off" />
+        <button class="icon-btn" id="searchClose" aria-label="Fechar busca"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="search-panel__results" id="searchResults"></div>
     </div>
-  </header>
 
-  <div class="overlay" id="overlay"></div>
-
-  <!-- BUSCA -->
-  <div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="Buscar produtos" hidden>
-    <div class="search-panel__box">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" id="searchInput" placeholder="Buscar por anime, personagem ou produto…" autocomplete="off" />
-      <button class="icon-btn" id="searchClose" aria-label="Fechar busca"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="search-panel__results" id="searchResults"></div>
-  </div>
-
-  <!-- CARRINHO -->
-  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Carrinho de compras" hidden>
-    <div class="cart-drawer__header">
-      <h2>Seu carrinho</h2>
-      <button class="icon-btn" id="cartClose" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="cart-drawer__items" id="cartItems"></div>
-    <div class="cart-drawer__empty" id="cartEmpty" hidden>
-      <i class="fa-solid fa-cart-shopping"></i>
-      <p>Seu carrinho está vazio.</p>
-      <button class="btn btn--outline" id="cartEmptyCta">Ver coleção</button>
-    </div>
-    <div class="cart-drawer__footer" id="cartFooter">
-      <div class="cart-drawer__subtotal">
-        <span>Subtotal</span>
-        <strong id="cartSubtotal">R$ 0,00</strong>
-      </div>
-      <p class="cart-drawer__hint">Frete grátis acima de R$199.</p>
-      <a href="./carrinho.html" class="btn btn--primary btn--block">Ver carrinho completo</a>
-    </div>
-  </aside>
-
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="hero" id="inicio" aria-label="Destaque principal">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="eyebrow"><span class="eyebrow__line"></span> Coleção 2026</p>
-          <h1 class="hero__title">
-            VISTA SUA<br />MELHOR<br /><span class="text-accent">VERSÃO.</span>
-          </h1>
-          <p class="hero__desc">Roupas com atitude, estilo e qualidade.<br />Feitas para quem não segue padrões.</p>
-          <div class="hero__cta">
-            <a href="./catalogo.html" class="btn btn--primary">Ver coleção</a>
-            <a href="./sobre.html" class="btn btn--outline">Sobre nós</a>
-          </div>
+    <!-- CARRINHO -->
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Carrinho de compras" hidden>
+        <div class="cart-drawer__header">
+        <h2>Seu carrinho</h2>
+        <button class="icon-btn" id="cartClose" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <div class="hero__media">
-          <div class="hero__slides" id="heroSlides">
-            <figure class="hero__slide is-active"><img src="./assets/img/gojo-infinity.webp" alt="Camiseta SHINKAI Gojo Infinity" loading="eager" /></figure>
-            <figure class="hero__slide"><img src="./assets/img/sukuna-king.webp" alt="Camiseta SHINKAI Sukuna King" loading="lazy" /></figure>
-            <figure class="hero__slide"><img src="./assets/img/survey-corps.webp" alt="Camiseta SHINKAI Survey Corps" loading="lazy" /></figure>
-          </div>
-          <div class="hero__glow" aria-hidden="true"></div>
+        <div class="cart-drawer__items" id="cartItems"></div>
+        <div class="cart-drawer__empty" id="cartEmpty" hidden>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p>Seu carrinho está vazio.</p>
+        <button class="btn btn--outline" id="cartEmptyCta">Ver coleção</button>
         </div>
-      </div>
-      <div class="hero__dots" id="heroDots" role="tablist" aria-label="Selecionar destaque"></div>
-    </section>
-
-    <!-- BENEFÍCIOS -->
-    <section class="perks" aria-label="Benefícios da loja">
-      <div class="container perks__grid">
-        <div class="perk"><i class="fa-solid fa-truck-fast"></i><div><strong>Frete grátis</strong><span>Acima de R$199</span></div></div>
-        <div class="perk"><i class="fa-solid fa-rotate"></i><div><strong>Troca fácil</strong><span>Até 7 dias</span></div></div>
-        <div class="perk"><i class="fa-solid fa-shield-halved"></i><div><strong>Compra segura</strong><span>Seus dados protegidos</span></div></div>
-        <div class="perk"><i class="fa-brands fa-whatsapp"></i><div><strong>Compre pelo WhatsApp</strong><span>Atendimento direto</span></div></div>
-      </div>
-    </section>
-
-    <!-- MAIS VENDIDAS -->
-    <section class="featured" aria-label="Mais vendidas">
-      <div class="container">
-        <h2 class="section-title"><span class="section-title__dash"></span>Mais vendidas<span class="section-title__dash"></span></h2>
-        <ul class="product-grid" id="bestsellerGrid"></ul>
-        <div class="featured__cta">
-          <a href="./catalogo.html" class="btn btn--outline">Ver catálogo completo <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="cart-drawer__footer" id="cartFooter">
+        <div class="cart-drawer__subtotal">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">R$ 0,00</strong>
         </div>
-      </div>
-    </section>
-
-    <!-- ESTAÇÕES -->
-    <section class="seasons" aria-label="Compre por estação">
-      <div class="container">
-        <h2 class="section-title"><span class="section-title__dash"></span>Compre pela estação<span class="section-title__dash"></span></h2>
-        <div class="seasons__grid" id="seasonsGrid"></div>
-      </div>
-    </section>
-
-    <!-- MELHORES PREÇOS -->
-    <section class="deals" aria-label="Melhores preços">
-      <div class="container">
-        <div class="deals__header">
-          <div>
-            <p class="eyebrow"><span class="eyebrow__line"></span> Por tempo limitado</p>
-            <h2>Melhores preços da semana</h2>
-          </div>
-          <a href="./catalogo.html?sort=desconto" class="btn btn--outline">Ver todas as ofertas</a>
+        <p class="cart-drawer__hint">Frete grátis acima de R$199.</p>
+        <a href="./carrinho.html" class="btn btn--primary btn--block">Ver carrinho completo</a>
         </div>
-        <ul class="product-grid" id="dealsGrid"></ul>
-      </div>
-    </section>
+    </aside>
 
-    <!-- SOBRE (teaser) -->
-    <section class="about-teaser" aria-label="Sobre a SHINKAI">
-      <div class="container about-teaser__inner">
-        <div class="about-teaser__media">
-          <img src="./assets/img/naruto-uzumaki.webp" alt="Camiseta SHINKAI Naruto Uzumaki" loading="lazy" />
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="hero" id="inicio" aria-label="Destaque principal">
+        <div class="container hero__inner">
+            <div class="hero__content">
+            <p class="eyebrow"><span class="eyebrow__line"></span> Coleção 2026</p>
+            <h1 class="hero__title">
+                VISTA SUA<br />MELHOR<br /><span class="text-accent">VERSÃO.</span>
+            </h1>
+            <p class="hero__desc">Roupas com atitude, estilo e qualidade.<br />Feitas para quem não segue padrões.</p>
+            <div class="hero__cta">
+                <a href="./catalogo.html" class="btn btn--primary">Ver coleção</a>
+                <a href="./sobre.html" class="btn btn--outline">Sobre nós</a>
+            </div>
+            </div>
+            <div class="hero__media">
+            <div class="hero__slides" id="heroSlides">
+                <figure class="hero__slide is-active"><img src="./assets/img/gojo-infinity.webp" alt="Camiseta SHINKAI Gojo Infinity" loading="eager" /></figure>
+                <figure class="hero__slide"><img src="./assets/img/sukuna-king.webp" alt="Camiseta SHINKAI Sukuna King" loading="lazy" /></figure>
+                <figure class="hero__slide"><img src="./assets/img/survey-corps.webp" alt="Camiseta SHINKAI Survey Corps" loading="lazy" /></figure>
+            </div>
+            <div class="hero__glow" aria-hidden="true"></div>
+            </div>
         </div>
-        <div class="about-teaser__content">
-          <p class="eyebrow"><span class="eyebrow__line"></span> Nossa história</p>
-          <h2>Mais que roupas,<br /><span class="text-accent">uma identidade.</span></h2>
-          <p>SHINKAI nasceu da vontade de transformar cenas marcantes do anime em peças que você usa todos os dias — com tecido premium e estampas que aguentam a maratona.</p>
-          <a href="./sobre.html" class="btn btn--primary">Conhecer a marca</a>
+        <div class="hero__dots" id="heroDots" role="tablist" aria-label="Selecionar destaque"></div>
+        </section>
+
+        <!-- BENEFÍCIOS -->
+        <section class="perks" aria-label="Benefícios da loja">
+        <div class="container perks__grid">
+            <div class="perk"><i class="fa-solid fa-truck-fast"></i><div><strong>Frete grátis</strong><span>Acima de R$199</span></div></div>
+            <div class="perk"><i class="fa-solid fa-rotate"></i><div><strong>Troca fácil</strong><span>Até 7 dias</span></div></div>
+            <div class="perk"><i class="fa-solid fa-shield-halved"></i><div><strong>Compra segura</strong><span>Seus dados protegidos</span></div></div>
+            <div class="perk"><i class="fa-brands fa-whatsapp"></i><div><strong>Compre pelo WhatsApp</strong><span>Atendimento direto</span></div></div>
         </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- BLOG (teaser) -->
-    <section class="blog-teaser" aria-label="Últimas do blog">
-      <div class="container">
-        <h2 class="section-title"><span class="section-title__dash"></span>Do nosso blog<span class="section-title__dash"></span></h2>
-        <div class="blog-grid" id="blogTeaserGrid"></div>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER CTA -->
-    <section class="newsletter-cta" aria-label="Assine a newsletter">
-      <div class="container newsletter-cta__inner">
-        <div>
-          <h2>Receba novidades</h2>
-          <p>Assine nossa newsletter e receba descontos exclusivos!</p>
+        <!-- MAIS VENDIDAS -->
+        <section class="featured" aria-label="Mais vendidas">
+        <div class="container">
+            <h2 class="section-title"><span class="section-title__dash"></span>Mais vendidas<span class="section-title__dash"></span></h2>
+            <ul class="product-grid" id="bestsellerGrid"></ul>
+            <div class="featured__cta">
+            <a href="./catalogo.html" class="btn btn--outline">Ver catálogo completo <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
-        <form class="newsletter-form" data-newsletter novalidate>
-          <label class="sr-only" for="newsletterEmail">Seu e-mail</label>
-          <input type="email" id="newsletterEmail" placeholder="Seu e-mail" required />
-          <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
-        </form>
-        <p class="newsletter-form__feedback" data-feedback role="status" aria-live="polite"></p>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <a href="./index.html" class="logo"><span class="logo__title">SHINKAI</span><span class="logo__jp">シンカイ</span></a>
-        <p>Mais que roupas, uma identidade.<br />Sinta a evolução. Vista SHINKAI.</p>
-        <div class="footer__social">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="mailto:contato@shinkai.com.br" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a>
+        <!-- ESTAÇÕES -->
+        <section class="seasons" aria-label="Compre por estação">
+        <div class="container">
+            <h2 class="section-title"><span class="section-title__dash"></span>Compre pela estação<span class="section-title__dash"></span></h2>
+            <div class="seasons__grid" id="seasonsGrid"></div>
         </div>
-      </div>
-      <nav class="footer__col" aria-label="Links rápidos">
-        <h3>Links rápidos</h3>
-        <ul>
-          <li><a href="./index.html">Início</a></li>
-          <li><a href="./catalogo.html">Catálogo</a></li>
-          <li><a href="./sobre.html">Sobre nós</a></li>
-          <li><a href="./blog.html">Blog</a></li>
-          <li><a href="./contato.html">Contato</a></li>
-        </ul>
-      </nav>
-      <nav class="footer__col" aria-label="Ajuda">
-        <h3>Ajuda</h3>
-        <ul>
-          <li><a href="./carrinho.html">Carrinho</a></li>
-          <li><a href="./login.html">Minha conta</a></li>
-          <li><a href="./contato.html">Perguntas frequentes</a></li>
-          <li><a href="./contato.html">Trocas e devoluções</a></li>
-        </ul>
-      </nav>
-      <div class="footer__col footer__newsletter">
-        <h3>Receba novidades</h3>
-        <p>Assine nossa newsletter e receba descontos exclusivos!</p>
-        <form class="newsletter-form" data-newsletter novalidate>
-          <label class="sr-only" for="newsletterEmailFooter">Seu e-mail</label>
-          <input type="email" id="newsletterEmailFooter" placeholder="Seu e-mail" required />
-          <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
-        </form>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="container footer__bottom-inner"><p>&copy; <span id="year"></span> SHINKAI. Todos os direitos reservados.</p></div>
-    </div>
-  </footer>
+        </section>
 
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo" hidden><i class="fa-solid fa-arrow-up"></i></button>
-  <a class="whatsapp-float" id="whatsappFloat" href="#" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <!-- MELHORES PREÇOS -->
+        <section class="deals" aria-label="Melhores preços">
+        <div class="container">
+            <div class="deals__header">
+            <div>
+                <p class="eyebrow"><span class="eyebrow__line"></span> Por tempo limitado</p>
+                <h2>Melhores preços da semana</h2>
+            </div>
+            <a href="./catalogo.html?sort=desconto" class="btn btn--outline">Ver todas as ofertas</a>
+            </div>
+            <ul class="product-grid" id="dealsGrid"></ul>
+        </div>
+        </section>
 
-  <script src="./js/data.js"></script>
-  <script src="./js/core.js"></script>
-  <script src="./js/home.js" defer></script>
-</body>
-</html>
+        <!-- SOBRE (teaser) -->
+        <section class="about-teaser" aria-label="Sobre a SHINKAI">
+        <div class="container about-teaser__inner">
+            <div class="about-teaser__media">
+            <img src="./assets/img/naruto-uzumaki.webp" alt="Camiseta SHINKAI Naruto Uzumaki" loading="lazy" />
+            </div>
+            <div class="about-teaser__content">
+            <p class="eyebrow"><span class="eyebrow__line"></span> Nossa história</p>
+            <h2>Mais que roupas,<br /><span class="text-accent">uma identidade.</span></h2>
+            <p>SHINKAI nasceu da vontade de transformar cenas marcantes do anime em peças que você usa todos os dias — com tecido premium e estampas que aguentam a maratona.</p>
+            <a href="./sobre.html" class="btn btn--primary">Conhecer a marca</a>
+            </div>
+        </div>
+        </section>
+
+        <!-- BLOG (teaser) -->
+        <section class="blog-teaser" aria-label="Últimas do blog">
+        <div class="container">
+            <h2 class="section-title"><span class="section-title__dash"></span>Do nosso blog<span class="section-title__dash"></span></h2>
+            <div class="blog-grid" id="blogTeaserGrid"></div>
+        </div>
+        </section>
+
+        <!-- NEWSLETTER CTA -->
+        <section class="newsletter-cta" aria-label="Assine a newsletter">
+        <div class="container newsletter-cta__inner">
+            <div>
+            <h2>Receba novidades</h2>
+            <p>Assine nossa newsletter e receba descontos exclusivos!</p>
+            </div>
+            <form class="newsletter-form" data-newsletter novalidate>
+            <label class="sr-only" for="newsletterEmail">Seu e-mail</label>
+            <input type="email" id="newsletterEmail" placeholder="Seu e-mail" required />
+            <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <p class="newsletter-form__feedback" data-feedback role="status" aria-live="polite"></p>
+        </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__grid">
+        <div class="footer__brand">
+            <a href="./index.html" class="logo"><span class="logo__title">SHINKAI</span><span class="logo__jp">シンカイ</span></a>
+            <p>Mais que roupas, uma identidade.<br />Sinta a evolução. Vista SHINKAI.</p>
+            <div class="footer__social">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:contato@shinkai.com.br" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <nav class="footer__col" aria-label="Links rápidos">
+            <h3>Links rápidos</h3>
+            <ul>
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./catalogo.html">Catálogo</a></li>
+            <li><a href="./sobre.html">Sobre nós</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Ajuda">
+            <h3>Ajuda</h3>
+            <ul>
+            <li><a href="./carrinho.html">Carrinho</a></li>
+            <li><a href="./login.html">Minha conta</a></li>
+            <li><a href="./contato.html">Perguntas frequentes</a></li>
+            <li><a href="./contato.html">Trocas e devoluções</a></li>
+            </ul>
+        </nav>
+        <div class="footer__col footer__newsletter">
+            <h3>Receba novidades</h3>
+            <p>Assine nossa newsletter e receba descontos exclusivos!</p>
+            <form class="newsletter-form" data-newsletter novalidate>
+            <label class="sr-only" for="newsletterEmailFooter">Seu e-mail</label>
+            <input type="email" id="newsletterEmailFooter" placeholder="Seu e-mail" required />
+            <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+        </div>
+        <div class="footer__bottom">
+        <div class="container footer__bottom-inner"><p>&copy; <span id="year"></span> SHINKAI. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo" hidden><i class="fa-solid fa-arrow-up"></i></button>
+    <a class="whatsapp-float" id="whatsappFloat" href="#" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/core.js"></script>
+    <script src="./js/home.js" defer></script>
+    </body>
+    </html>
