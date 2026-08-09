@@ -35,6 +35,7 @@ O **SHINKAI STORE** é uma página de apresentação desenvolvida com foco em:
 * CSS3
 * JavaScript
 * Google Fonts
+* SQL
 
 ---
 
@@ -48,30 +49,18 @@ O projeto foi desenvolvido para funcionar em:
 
 ---
 
-## 📸 Preview
+## 📸 Deploy
 
-Em breve imagens oficiais do projeto.
-
+Link pra deploy - "COLOCAR O LINK AQUI "
 ---
 
-## 🚀 Próximas Atualizações
-
-* Novo logo oficial da marca
-* Hero section reformulada
-* Melhorias visuais premium
-* Otimização de performance
-* Animações avançadas
-* Integração com carrinho de compras
-* Loja funcional completa
-
----
 
 ## 📂 Como Executar
 
 Clone o repositório:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/shinkai-store.git
+git clone https://github.com/Allan75489/shinkai-streetwear-store
 ```
 
 Abra o arquivo:
@@ -91,9 +80,3 @@ Este projeto está sob a licença **MIT**.
 ## 👨‍💻 Autor
 
 Desenvolvido por **Allan Gustavo**
-
----
-
-## ⭐ Considerações
-
-Projeto criado para portfólio, prática de front-end e evolução constante de design moderno para marcas digitais.

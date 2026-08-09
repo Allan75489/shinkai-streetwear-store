@@ -1,0 +1,107 @@
+/* ==========================================================================
+   SHINKAI — blog.css
+   ========================================================================== */
+
+.blog-list {
+  padding-block: var(--space-10) var(--space-16);
+}
+
+.blog-list__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.blog-grid--list {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.blog-card {
+  cursor: pointer;
+}
+
+/* ---- Modal de leitura ---- */
+.post-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: rgba(4, 3, 8, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.post-modal[hidden] {
+  display: none;
+}
+
+.post-modal__box {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  animation: post-modal-in 280ms var(--ease-out);
+}
+
+@keyframes post-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.post-modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 2;
+  background: rgba(8, 7, 12, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.post-modal__box img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+}
+
+.post-modal__body {
+  padding: var(--space-6) var(--space-8) var(--space-8);
+}
+
+.post-modal__body h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  text-transform: uppercase;
+  margin-block: var(--space-3) var(--space-2);
+  line-height: 1.15;
+}
+
+.post-modal__body .blog-card__meta {
+  margin-bottom: var(--space-5);
+}
+
+.post-modal__body p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .post-modal__body {
+    padding: var(--space-5) var(--space-5) var(--space-6);
+  }
+}

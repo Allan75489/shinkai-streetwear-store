@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Produto — SHINKAI</title>
+  <meta name="description" content="Detalhes do produto SHINKAI: tecido, tamanhos, preço e avaliação." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/produto.css" />
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="SHINKAI — página inicial"><span class="logo__title">SHINKAI</span><span class="logo__jp">シンカイ</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <nav class="nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-nav-link>Início</a></li>
+          <li><a href="catalogo.html" class="nav__link" data-nav-link>Catálogo</a></li>
+          <li><a href="sobre.html" class="nav__link" data-nav-link>Sobre</a></li>
+          <li><a href="blog.html" class="nav__link" data-nav-link>Blog</a></li>
+          <li><a href="contato.html" class="nav__link" data-nav-link>Contato</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Buscar produtos" aria-haspopup="dialog"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="catalogo.html?view=favoritos" class="icon-btn" id="wishlistToggle" aria-label="Ver favoritos"><i class="fa-solid fa-heart"></i><span class="badge" id="wishlistCount" hidden>0</span></a>
+        <a href="login.html" class="icon-btn" aria-label="Entrar ou cadastrar"><i class="fa-solid fa-user"></i></a>
+        <button class="icon-btn" id="cartToggle" aria-label="Abrir carrinho" aria-haspopup="dialog"><i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cartCount" hidden>0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="Buscar produtos" hidden>
+    <div class="search-panel__box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" id="searchInput" placeholder="Buscar por anime, personagem ou produto…" autocomplete="off" />
+      <button class="icon-btn" id="searchClose" aria-label="Fechar busca"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="search-panel__results" id="searchResults"></div>
+  </div>
+
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Carrinho de compras" hidden>
+    <div class="cart-drawer__header"><h2>Seu carrinho</h2><button class="icon-btn" id="cartClose" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="cart-drawer__items" id="cartItems"></div>
+    <div class="cart-drawer__empty" id="cartEmpty" hidden><i class="fa-solid fa-cart-shopping"></i><p>Seu carrinho está vazio.</p><button class="btn btn--outline" id="cartEmptyCta">Ver coleção</button></div>
+    <div class="cart-drawer__footer" id="cartFooter">
+      <div class="cart-drawer__subtotal"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <p class="cart-drawer__hint">Frete grátis acima de R$199.</p>
+      <a href="carrinho.html" class="btn btn--primary btn--block">Ver carrinho completo</a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <div class="container">
+      <div class="breadcrumb breadcrumb--left" id="productBreadcrumb"></div>
+    </div>
+
+    <!-- Carregado dinamicamente via JS -->
+    <section class="product-detail" id="productDetail" aria-live="polite">
+      <div class="container product-detail__skeleton" id="productSkeleton">
+        <div class="skeleton" style="aspect-ratio:1;border-radius:var(--radius-lg);"></div>
+        <div>
+          <div class="skeleton" style="height:1rem;width:40%;margin-bottom:1rem;border-radius:4px;"></div>
+          <div class="skeleton" style="height:2.2rem;width:80%;margin-bottom:1.5rem;border-radius:4px;"></div>
+          <div class="skeleton" style="height:1.5rem;width:30%;border-radius:4px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-notfound" id="productNotFound" hidden>
+      <div class="container">
+        <i class="fa-solid fa-shirt"></i>
+        <h1>Produto não encontrado</h1>
+        <p>O item que você procura não existe mais ou o link está incorreto.</p>
+        <a href="catalogo.html" class="btn btn--primary">Voltar ao catálogo</a>
+      </div>
+    </section>
+
+    <!-- RELACIONADOS -->
+    <section class="related" id="relatedSection" aria-label="Você também pode gostar" hidden>
+      <div class="container">
+        <h2 class="section-title"><span class="section-title__dash"></span>Você também pode gostar<span class="section-title__dash"></span></h2>
+        <ul class="product-grid" id="relatedGrid"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__title">SHINKAI</span><span class="logo__jp">シンカイ</span></a>
+        <p>Mais que roupas, uma identidade.<br />Sinta a evolução. Vista SHINKAI.</p>
+        <div class="footer__social"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a href="mailto:contato@shinkai.com.br" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a></div>
+      </div>
+      <nav class="footer__col" aria-label="Links rápidos"><h3>Links rápidos</h3><ul><li><a href="index.html">Início</a></li><li><a href="catalogo.html">Catálogo</a></li><li><a href="sobre.html">Sobre nós</a></li><li><a href="blog.html">Blog</a></li><li><a href="contato.html">Contato</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Ajuda"><h3>Ajuda</h3><ul><li><a href="carrinho.html">Carrinho</a></li><li><a href="login.html">Minha conta</a></li><li><a href="contato.html">Perguntas frequentes</a></li><li><a href="contato.html">Trocas e devoluções</a></li></ul></nav>
+      <div class="footer__col footer__newsletter">
+        <h3>Receba novidades</h3><p>Assine nossa newsletter e receba descontos exclusivos!</p>
+        <form class="newsletter-form" data-newsletter novalidate>
+          <label class="sr-only" for="newsletterEmailFooter">Seu e-mail</label>
+          <input type="email" id="newsletterEmailFooter" placeholder="Seu e-mail" required />
+          <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container footer__bottom-inner"><p>&copy; <span id="year"></span> SHINKAI. Todos os direitos reservados.</p></div></div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo" hidden><i class="fa-solid fa-arrow-up"></i></button>
+  <a class="whatsapp-float" id="whatsappFloat" href="#" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/produto.js" defer></script>
+</body>
+</html>

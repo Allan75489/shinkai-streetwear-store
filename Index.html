@@ -1,680 +1,260 @@
-    <!doctype html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SHINKAI — Camisas de Anime</title>
-        <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+JP:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="cursor" id="cursor"></div>
-        <div class="cursor-follower" id="cursor-follower"></div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHINKAI — Vista sua melhor versão.</title>
+  <meta name="description" content="SHINKAI. Camisetas e moletons streetwear inspirados em anime. Roupas com atitude, estilo e qualidade." />
 
-        <!-- NAV -->
-        <nav>
-        <a href="#" class="nav-logo">SHIN<span>K</span>AI</a>
-        <ul class="nav-links">
-            <li><a href="#produtos">Coleção</a></li>
-            <li><a href="#colecoes">Séries</a></li>
-            <li><a href="#processo">Sobre</a></li>
-            <li><a href="#newsletter">Contato</a></li>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="SHINKAI — página inicial">
+        <span class="logo__title">SHINKAI</span>
+        <span class="logo__jp">シンカイ</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link" data-nav-link>Início</a></li>
+          <li><a href="catalogo.html" class="nav__link" data-nav-link>Catálogo</a></li>
+          <li><a href="sobre.html" class="nav__link" data-nav-link>Sobre</a></li>
+          <li><a href="blog.html" class="nav__link" data-nav-link>Blog</a></li>
+          <li><a href="contato.html" class="nav__link" data-nav-link>Contato</a></li>
         </ul>
-        </nav>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Buscar produtos" aria-haspopup="dialog">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="catalogo.html?view=favoritos" class="icon-btn" id="wishlistToggle" aria-label="Ver favoritos">
+          <i class="fa-solid fa-heart"></i>
+          <span class="badge" id="wishlistCount" hidden>0</span>
+        </a>
+        <a href="login.html" class="icon-btn" aria-label="Entrar ou cadastrar">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <button class="icon-btn" id="cartToggle" aria-label="Abrir carrinho" aria-haspopup="dialog">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge" id="cartCount" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-        <!-- HERO -->
-        <section id="hero">
-        <div class="hero-bg"></div>
-        <div class="ink-lines">
-            <svg
-            viewBox="0 0 600 800"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            >
-            <line
-                x1="0"
-                y1="0"
-                x2="600"
-                y2="800"
-                stroke="white"
-                stroke-width="0.5"
-            />
-            <line
-                x1="100"
-                y1="0"
-                x2="700"
-                y2="800"
-                stroke="white"
-                stroke-width="0.5"
-            />
-            <line
-                x1="200"
-                y1="0"
-                x2="800"
-                y2="800"
-                stroke="white"
-                stroke-width="0.5"
-            />
-            <line
-                x1="300"
-                y1="0"
-                x2="900"
-                y2="800"
-                stroke="white"
-                stroke-width="0.5"
-            />
-            <line
-                x1="600"
-                y1="0"
-                x2="0"
-                y2="800"
-                stroke="white"
-                stroke-width="0.5"
-            />
-            <line
-                x1="500"
-                y1="0"
-                x2="-100"
-                y2="800"
-                stroke="white"
-                stroke-width="0.5"
-            />
-            <circle cx="300" cy="400" r="280" stroke="white" stroke-width="0.5" />
-            <circle cx="300" cy="400" r="180" stroke="white" stroke-width="0.5" />
-            <circle cx="300" cy="400" r="80" stroke="white" stroke-width="0.5" />
-            </svg>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- BUSCA -->
+  <div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="Buscar produtos" hidden>
+    <div class="search-panel__box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" id="searchInput" placeholder="Buscar por anime, personagem ou produto…" autocomplete="off" />
+      <button class="icon-btn" id="searchClose" aria-label="Fechar busca"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="search-panel__results" id="searchResults"></div>
+  </div>
+
+  <!-- CARRINHO -->
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Carrinho de compras" hidden>
+    <div class="cart-drawer__header">
+      <h2>Seu carrinho</h2>
+      <button class="icon-btn" id="cartClose" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems"></div>
+    <div class="cart-drawer__empty" id="cartEmpty" hidden>
+      <i class="fa-solid fa-cart-shopping"></i>
+      <p>Seu carrinho está vazio.</p>
+      <button class="btn btn--outline" id="cartEmptyCta">Ver coleção</button>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter">
+      <div class="cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">R$ 0,00</strong>
+      </div>
+      <p class="cart-drawer__hint">Frete grátis acima de R$199.</p>
+      <a href="carrinho.html" class="btn btn--primary btn--block">Ver carrinho completo</a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-label="Destaque principal">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__line"></span> Coleção 2026</p>
+          <h1 class="hero__title">
+            VISTA SUA<br />MELHOR<br /><span class="text-accent">VERSÃO.</span>
+          </h1>
+          <p class="hero__desc">Roupas com atitude, estilo e qualidade.<br />Feitas para quem não segue padrões.</p>
+          <div class="hero__cta">
+            <a href="catalogo.html" class="btn btn--primary">Ver coleção</a>
+            <a href="sobre.html" class="btn btn--outline">Sobre nós</a>
+          </div>
         </div>
-
-        <div class="hero-content">
-            <div class="hero-label">Nova Coleção 2025</div>
-            <h1 class="hero-title">
-            ANIME
-            <span class="accent">WEAR</span>
-            <span class="jp">新界 — SHINKAI</span>
-            </h1>
-            <p class="hero-desc">
-            Camisas premium para quem vive o anime além da tela. Cada peça é uma
-            obra de arte que celebra os universos que definiram gerações.
-            </p>
-            <div class="hero-ctas">
-            <a href="#produtos" class="btn-primary">Ver Coleção</a>
-            <a href="#colecoes" class="btn-ghost">
-                Explorar Séries
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                    d="M4 10h12M12 6l4 4-4 4"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-                </svg>
-            </a>
-            </div>
+        <div class="hero__media">
+          <div class="hero__slides" id="heroSlides">
+            <figure class="hero__slide is-active"><img src="assets/img/gojo-infinity.webp" alt="Camiseta SHINKAI Gojo Infinity" loading="eager" /></figure>
+            <figure class="hero__slide"><img src="assets/img/sukuna-king.webp" alt="Camiseta SHINKAI Sukuna King" loading="lazy" /></figure>
+            <figure class="hero__slide"><img src="assets/img/survey-corps.webp" alt="Camiseta SHINKAI Survey Corps" loading="lazy" /></figure>
+          </div>
+          <div class="hero__glow" aria-hidden="true"></div>
         </div>
+      </div>
+      <div class="hero__dots" id="heroDots" role="tablist" aria-label="Selecionar destaque"></div>
+    </section>
 
-        <div class="hero-visual">
-            <div class="shirt-frame">
-            <div class="shirt-bg-circle"></div>
-            <svg
-                class="shirt-svg"
-                viewBox="0 0 400 400"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <!-- Shirt shape -->
-                <path
-                d="M130 80 L80 130 L120 150 L110 320 L290 320 L280 150 L320 130 L270 80 L240 100 C240 100 220 120 200 120 C180 120 160 100 160 100 Z"
-                fill="#1A1A22"
-                stroke="rgba(255,255,255,0.1)"
-                stroke-width="1.5"
-                />
-                <!-- Design element - eye symbol -->
-                <ellipse
-                cx="200"
-                cy="200"
-                rx="45"
-                ry="30"
-                stroke="#E8132A"
-                stroke-width="2"
-                fill="none"
-                />
-                <circle cx="200" cy="200" r="14" fill="#E8132A" />
-                <circle cx="200" cy="200" r="7" fill="#090909" />
-                <circle cx="196" cy="196" r="3" fill="#E8132A" opacity="0.6" />
-                <!-- Kanji decoration -->
-                <text
-                x="140"
-                y="270"
-                font-family="serif"
-                font-size="14"
-                fill="rgba(201,168,76,0.5)"
-                letter-spacing="4"
-                >
-                新 界 覚
-                </text>
-                <!-- Corner marks -->
-                <line
-                x1="150"
-                y1="170"
-                x2="165"
-                y2="170"
-                stroke="rgba(201,168,76,0.3)"
-                stroke-width="1"
-                />
-                <line
-                x1="235"
-                y1="170"
-                x2="250"
-                y2="170"
-                stroke="rgba(201,168,76,0.3)"
-                stroke-width="1"
-                />
-                <line
-                x1="150"
-                y1="230"
-                x2="165"
-                y2="230"
-                stroke="rgba(201,168,76,0.3)"
-                stroke-width="1"
-                />
-                <line
-                x1="235"
-                y1="230"
-                x2="250"
-                y2="230"
-                stroke="rgba(201,168,76,0.3)"
-                stroke-width="1"
-                />
-                <!-- Glow -->
-                <ellipse
-                cx="200"
-                cy="200"
-                rx="45"
-                ry="30"
-                stroke="rgba(232,19,42,0.2)"
-                stroke-width="8"
-                fill="none"
-                />
-            </svg>
-            </div>
+    <!-- BENEFÍCIOS -->
+    <section class="perks" aria-label="Benefícios da loja">
+      <div class="container perks__grid">
+        <div class="perk"><i class="fa-solid fa-truck-fast"></i><div><strong>Frete grátis</strong><span>Acima de R$199</span></div></div>
+        <div class="perk"><i class="fa-solid fa-rotate"></i><div><strong>Troca fácil</strong><span>Até 7 dias</span></div></div>
+        <div class="perk"><i class="fa-solid fa-shield-halved"></i><div><strong>Compra segura</strong><span>Seus dados protegidos</span></div></div>
+        <div class="perk"><i class="fa-brands fa-whatsapp"></i><div><strong>Compre pelo WhatsApp</strong><span>Atendimento direto</span></div></div>
+      </div>
+    </section>
+
+    <!-- MAIS VENDIDAS -->
+    <section class="featured" aria-label="Mais vendidas">
+      <div class="container">
+        <h2 class="section-title"><span class="section-title__dash"></span>Mais vendidas<span class="section-title__dash"></span></h2>
+        <ul class="product-grid" id="bestsellerGrid"></ul>
+        <div class="featured__cta">
+          <a href="catalogo.html" class="btn btn--outline">Ver catálogo completo <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        </section>
+      </div>
+    </section>
 
-        <!-- MARQUEE -->
-        <div class="marquee-section">
-        <div class="marquee-track" id="marquee">
-            <span class="marquee-item">Naruto</span>
-            <span class="marquee-item">Attack on Titan</span>
-            <span class="marquee-item">Demon Slayer</span>
-            <span class="marquee-item">One Piece</span>
-            <span class="marquee-item">Jujutsu Kaisen</span>
-            <span class="marquee-item">Chainsaw Man</span>
-            <span class="marquee-item">Hunter x Hunter</span>
-            <span class="marquee-item">Bleach</span>
-            <span class="marquee-item">Dragon Ball</span>
-            <span class="marquee-item">Spy x Family</span>
-            <!-- Duplicated for infinite loop -->
-            <span class="marquee-item">Naruto</span>
-            <span class="marquee-item">Attack on Titan</span>
-            <span class="marquee-item">Demon Slayer</span>
-            <span class="marquee-item">One Piece</span>
-            <span class="marquee-item">Jujutsu Kaisen</span>
-            <span class="marquee-item">Chainsaw Man</span>
-            <span class="marquee-item">Hunter x Hunter</span>
-            <span class="marquee-item">Bleach</span>
-            <span class="marquee-item">Dragon Ball</span>
-            <span class="marquee-item">Spy x Family</span>
+    <!-- ESTAÇÕES -->
+    <section class="seasons" aria-label="Compre por estação">
+      <div class="container">
+        <h2 class="section-title"><span class="section-title__dash"></span>Compre pela estação<span class="section-title__dash"></span></h2>
+        <div class="seasons__grid" id="seasonsGrid"></div>
+      </div>
+    </section>
+
+    <!-- MELHORES PREÇOS -->
+    <section class="deals" aria-label="Melhores preços">
+      <div class="container">
+        <div class="deals__header">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> Por tempo limitado</p>
+            <h2>Melhores preços da semana</h2>
+          </div>
+          <a href="catalogo.html?sort=desconto" class="btn btn--outline">Ver todas as ofertas</a>
         </div>
+        <ul class="product-grid" id="dealsGrid"></ul>
+      </div>
+    </section>
+
+    <!-- SOBRE (teaser) -->
+    <section class="about-teaser" aria-label="Sobre a SHINKAI">
+      <div class="container about-teaser__inner">
+        <div class="about-teaser__media">
+          <img src="assets/img/naruto-uzumaki.webp" alt="Camiseta SHINKAI Naruto Uzumaki" loading="lazy" />
         </div>
-
-        <!-- ========================= -->
-        <!-- PRODUTOS ORGANIZADO -->
-        <!-- ========================= -->
-
-        <section id="produtos">
-        <div class="section-header reveal">
-            <div>
-            <div class="section-label">Mais Vendidos</div>
-            <h2 class="section-title">COLEÇÃO<br />DESTAQUE</h2>
-            </div>
-
-            <a href="#colecoes" class="section-link"> Ver tudo </a>
+        <div class="about-teaser__content">
+          <p class="eyebrow"><span class="eyebrow__line"></span> Nossa história</p>
+          <h2>Mais que roupas,<br /><span class="text-accent">uma identidade.</span></h2>
+          <p>SHINKAI nasceu da vontade de transformar cenas marcantes do anime em peças que você usa todos os dias — com tecido premium e estampas que aguentam a maratona.</p>
+          <a href="sobre.html" class="btn btn--primary">Conhecer a marca</a>
         </div>
+      </div>
+    </section>
 
-        <div class="products-grid reveal">
-            <!-- ================= CARD 1 ================= -->
-            <div class="product-card">
-            <div class="card-img">
-                <!-- LINK DA FOTO -->
-                <img
-                src="./Img/camisa demon slayer tanjiro.webp"
-                alt="Camisa Tanjiro"
-                class="product-photo"
-                />
+    <!-- BLOG (teaser) -->
+    <section class="blog-teaser" aria-label="Últimas do blog">
+      <div class="container">
+        <h2 class="section-title"><span class="section-title__dash"></span>Do nosso blog<span class="section-title__dash"></span></h2>
+        <div class="blog-grid" id="blogTeaserGrid"></div>
+      </div>
+    </section>
 
-                <div class="card-overlay"></div>
-
-                <div class="card-info">
-                <div class="card-series">Demon Slayer</div>
-                <div class="card-name">TANJIRO<br />SPECIAL EDITION</div>
-                <div class="card-price">R$ 189,90</div>
-                </div>
-            </div>
-            </div>
-
-            <!-- ================= CARD 2 ================= -->
-            <div class="product-card">
-            <div class="card-img">
-                <!-- LINK DA FOTO -->
-                <img
-                src="./Img/camisa attack on titan.jpg"
-                alt="Camisa Attack on Titan"
-                class="product-photo"
-                />
-
-                <div class="card-overlay"></div>
-
-                <div class="card-info">
-                <div class="card-series">Attack on Titan</div>
-                <div class="card-name">SURVEY<br />CORPS</div>
-                <div class="card-price">R$ 169,90</div>
-                </div>
-            </div>
-            </div>
-
-            <!-- ================= CARD 3 ================= -->
-            <div class="product-card">
-            <div class="card-img">
-                <!-- LINK DA FOTO -->
-                <img
-                src="./Img/Camisa Jujutsu Kaisen.webp"
-                alt="Camisa Jujutsu Kaisen"
-                class="product-photo"
-                />
-
-                <div class="card-overlay"></div>
-
-                <div class="card-info">
-                <div class="card-series">Jujutsu Kaisen</div>
-                <div class="card-name">CURSE<br />ENERGY</div>
-                <div class="card-price">R$ 179,90</div>
-                </div>
-            </div>
-            </div>
-
-            <!-- ================= CARD 4 ================= -->
-            <div class="product-card">
-            <div class="card-img">
-                <!-- LINK DA FOTO -->
-                <img
-                src="./Img/camisa dragon ball.webp"
-                alt="Camisa Dragon Ball"
-                class="product-photo"
-                />
-
-                <div class="card-overlay"></div>
-
-                <div class="card-info">
-                <div class="card-series">Dragon Ball</div>
-                <div class="card-name">SUPER<br />SAIYAN</div>
-                <div class="card-price">R$ 159,90</div>
-                </div>
-            </div>
-            </div>
+    <!-- NEWSLETTER CTA -->
+    <section class="newsletter-cta" aria-label="Assine a newsletter">
+      <div class="container newsletter-cta__inner">
+        <div>
+          <h2>Receba novidades</h2>
+          <p>Assine nossa newsletter e receba descontos exclusivos!</p>
         </div>
-        </section>
+        <form class="newsletter-form" data-newsletter novalidate>
+          <label class="sr-only" for="newsletterEmail">Seu e-mail</label>
+          <input type="email" id="newsletterEmail" placeholder="Seu e-mail" required />
+          <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+        <p class="newsletter-form__feedback" data-feedback role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
 
-        <!-- STATEMENT -->
-        <section id="statement">
-        <div class="statement-content">
-            <div class="section-label reveal" style="color: var(--red)">
-            Nossa Filosofia
-            </div>
-            <h2 class="statement-quote reveal">
-            VIVA O<br />ANIME.<br /><em>USE</em> A<br />HISTÓRIA.
-            </h2>
-            <p class="statement-body reveal">
-            Cada fio tecido com intenção. Cada design aprovado por quem vive a
-            cultura. Não fazemos apenas camisas — criamos artefatos culturais para
-            a geração que cresceu com os olhos fixos na tela.
-            </p>
-            <div class="statement-stats reveal">
-            <div>
-                <div class="stat-num">12<span>K+</span></div>
-                <div class="stat-label">Clientes satisfeitos</div>
-            </div>
-            <div>
-                <div class="stat-num">48<span>+</span></div>
-                <div class="stat-label">Designs exclusivos</div>
-            </div>
-            <div>
-                <div class="stat-num">5<span>★</span></div>
-                <div class="stat-label">Avaliação média</div>
-            </div>
-            </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__title">SHINKAI</span><span class="logo__jp">シンカイ</span></a>
+        <p>Mais que roupas, uma identidade.<br />Sinta a evolução. Vista SHINKAI.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:contato@shinkai.com.br" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        </section>
+      </div>
+      <nav class="footer__col" aria-label="Links rápidos">
+        <h3>Links rápidos</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Ajuda">
+        <h3>Ajuda</h3>
+        <ul>
+          <li><a href="carrinho.html">Carrinho</a></li>
+          <li><a href="login.html">Minha conta</a></li>
+          <li><a href="contato.html">Perguntas frequentes</a></li>
+          <li><a href="contato.html">Trocas e devoluções</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col footer__newsletter">
+        <h3>Receba novidades</h3>
+        <p>Assine nossa newsletter e receba descontos exclusivos!</p>
+        <form class="newsletter-form" data-newsletter novalidate>
+          <label class="sr-only" for="newsletterEmailFooter">Seu e-mail</label>
+          <input type="email" id="newsletterEmailFooter" placeholder="Seu e-mail" required />
+          <button type="submit" class="btn btn--primary" aria-label="Assinar newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner"><p>&copy; <span id="year"></span> SHINKAI. Todos os direitos reservados.</p></div>
+    </div>
+  </footer>
 
-        <!-- COLLECTIONS -->
-        <section id="colecoes">
-        <div class="section-header reveal">
-            <div>
-            <div class="section-label">Universos</div>
-            <h2 class="section-title">SÉRIES<br />EM DESTAQUE</h2>
-            </div>
-        </div>
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo" hidden><i class="fa-solid fa-arrow-up"></i></button>
+  <a class="whatsapp-float" id="whatsappFloat" href="#" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-        <div class="collections-grid">
-            <div class="collection-item coll-1 reveal">
-            <div class="coll-bg">鬼</div>
-            <div class="coll-gradient"></div>
-            <div class="coll-content">
-                <div>
-                <div class="coll-title">DEMON<br />SLAYER</div>
-                <div class="coll-sub">14 designs disponíveis</div>
-                </div>
-                <button class="coll-arrow">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path
-                    d="M3 9h12M11 5l4 4-4 4"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    />
-                </svg>
-                </button>
-            </div>
-            </div>
-            <div class="collection-item coll-2 reveal">
-            <div class="coll-bg">術</div>
-            <div class="coll-gradient"></div>
-            <div class="coll-content">
-                <div>
-                <div class="coll-title">JUJUTSU<br />KAISEN</div>
-                <div class="coll-sub">9 designs disponíveis</div>
-                </div>
-                <button class="coll-arrow">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path
-                    d="M3 9h12M11 5l4 4-4 4"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    />
-                </svg>
-                </button>
-            </div>
-            </div>
-            <div class="collection-item coll-3 reveal">
-            <div class="coll-bg">巨</div>
-            <div class="coll-gradient"></div>
-            <div class="coll-content">
-                <div>
-                <div class="coll-title">ATTACK<br />ON TITAN</div>
-                <div class="coll-sub">11 designs disponíveis</div>
-                </div>
-                <button class="coll-arrow">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path
-                    d="M3 9h12M11 5l4 4-4 4"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    />
-                </svg>
-                </button>
-            </div>
-            </div>
-        </div>
-        </section>
-
-        <!-- PROCESS -->
-        <section id="processo">
-        <div class="section-header reveal">
-            <div>
-            <div class="section-label">Nosso Processo</div>
-            <h2 class="section-title">QUALIDADE<br />SEM CONCESSÃO</h2>
-            </div>
-        </div>
-
-        <div class="process-grid">
-            <div class="process-item reveal">
-            <div class="process-num">01</div>
-            <div class="process-icon">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <rect
-                    x="3"
-                    y="3"
-                    width="22"
-                    height="22"
-                    rx="2"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                />
-                <path
-                    d="M8 14l4 4 8-8"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                />
-                </svg>
-            </div>
-            <div class="process-name">Design Autêntico</div>
-            <p class="process-desc">
-                Cada design é desenvolvido por artistas que amam anime. Sem clichês,
-                sem prints genéricos.
-            </p>
-            </div>
-            <div class="process-item reveal">
-            <div class="process-num">02</div>
-            <div class="process-icon">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <circle
-                    cx="14"
-                    cy="14"
-                    r="11"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                />
-                <path
-                    d="M14 8v6l4 2"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                />
-                </svg>
-            </div>
-            <div class="process-name">Tecido Premium</div>
-            <p class="process-desc">
-                100% algodão penteado 30.1 fios. Textura suave, durabilidade máxima,
-                conforto o dia todo.
-            </p>
-            </div>
-            <div class="process-item reveal">
-            <div class="process-num">03</div>
-            <div class="process-icon">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path
-                    d="M5 14C5 9 9 5 14 5s9 4 9 9-4 9-9 9"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                />
-                <path
-                    d="M5 14l4-2M5 14l4 2"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                />
-                </svg>
-            </div>
-            <div class="process-name">Impressão HD</div>
-            <p class="process-desc">
-                Serigrafia de alta definição com tintas eco-friendly. Cores vivas
-                que não desbotam após 200 lavagens.
-            </p>
-            </div>
-            <div class="process-item reveal">
-            <div class="process-num">04</div>
-            <div class="process-icon">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path
-                    d="M6 20l4-8 4 4 4-6 4 10"
-                    stroke="#C9A84C"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-                </svg>
-            </div>
-            <div class="process-name">Entrega Expressa</div>
-            <p class="process-desc">
-                Envio em 24h para todo o Brasil. Rastreamento em tempo real e
-                embalagem exclusiva.
-            </p>
-            </div>
-        </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section id="depoimentos">
-        <div class="section-header reveal">
-            <div>
-            <div class="section-label" style="color: var(--red)">Depoimentos</div>
-            <h2 class="section-title" style="color: var(--ink)">
-                O QUE<br />DIZEM
-            </h2>
-            </div>
-        </div>
-
-        <div class="testimonials-track">
-            <div class="testimonial-card reveal">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-                Qualidade absurda. Já lavei umas 30 vezes e a estampa continua
-                perfeita. A camisa do Tanjiro é minha favorita de longe.
-            </p>
-            <div class="testimonial-author">
-                <div class="author-avatar">LM</div>
-                <div>
-                <div class="author-name">Lucas Mendes</div>
-                <div class="author-handle">@lucasanime · São Paulo</div>
-                </div>
-            </div>
-            </div>
-            <div class="testimonial-card reveal">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-                Finalmente uma marca que entende a cultura. Sem aquele visual de
-                camisa de evento. É arte de verdade.
-            </p>
-            <div class="testimonial-author">
-                <div class="author-avatar">AK</div>
-                <div>
-                <div class="author-name">Amanda Kimura</div>
-                <div class="author-handle">@amandaweeb · Curitiba</div>
-                </div>
-            </div>
-            </div>
-            <div class="testimonial-card reveal">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-                Recebi em 2 dias e a embalagem era linda. Parece que você está
-                recebendo um produto de grife japonesa.
-            </p>
-            <div class="testimonial-author">
-                <div class="author-avatar">RT</div>
-                <div>
-                <div class="author-name">Rodrigo Tanaka</div>
-                <div class="author-handle">@rodrigotanaka · Rio de Janeiro</div>
-                </div>
-            </div>
-            </div>
-        </div>
-        </section>
-
-        <!-- NEWSLETTER -->
-        <section id="newsletter">
-        <div class="nl-content">
-            <div class="nl-label">Fique por dentro</div>
-            <h2 class="nl-title">DROPS<br />EXCLUSIVOS<br />EM PRIMEIRA MÃO</h2>
-            <div class="nl-form">
-            <input type="email" class="nl-input" placeholder="seu@email.com" />
-            <button class="nl-btn">Entrar</button>
-            </div>
-        </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-        <div class="footer-top">
-            <div>
-            <div class="footer-logo">SHIN<span>K</span>AI</div>
-            <div class="footer-tagline">新界 — Além da Tela</div>
-            </div>
-            <div class="footer-cols">
-            <div class="footer-col">
-                <div class="footer-col-title">Loja</div>
-                <ul>
-                <li><a href="#">Todos os produtos</a></li>
-                <li><a href="#">Novidades</a></li>
-                <li><a href="#">Mais vendidos</a></li>
-                <li><a href="#">Promoções</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-title">Séries</div>
-                <ul>
-                <li><a href="#">Demon Slayer</a></li>
-                <li><a href="#">Jujutsu Kaisen</a></li>
-                <li><a href="#">Attack on Titan</a></li>
-                <li><a href="#">Dragon Ball</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-title">Empresa</div>
-                <ul>
-                <li><a href="#">Sobre nós</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Parcerias</a></li>
-                <li><a href="#">Contato</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-copy">
-            © 2026 SHINKAI. Todos os direitos reservados.
-            </div>
-            <div class="footer-social">
-            <a href="#" class="social-link">
-                <svg viewBox="0 0 24 24">
-                <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.07-.78 4.19-1.82 6.99-3.02 8.4-3.6 4.01-1.67 4.84-1.96 5.38-1.97.12 0 .38.03.55.18.14.12.18.29.2.45-.01.06-.01.13-.02.2z"
-                />
-                </svg>
-            </a>
-            <a href="#" class="social-link">
-                <svg viewBox="0 0 24 24">
-                <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                />
-                </svg>
-            </a>
-            <a href="#" class="social-link">
-                <svg viewBox="0 0 24 24">
-                <path
-                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"
-                />
-                </svg>
-            </a>
-            </div>
-        </div>
-        </footer>
-        <script src="Scrpit.js"></script>
-    </body>
-    </html>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* ==========================================================================
+   SHINKAI — catalogo.css
+   ========================================================================== */
+
+.catalog {
+  padding-block: var(--space-10) var(--space-16);
+}
+
+.catalog__inner {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ---- Sidebar de filtros ---- */
+.catalog__filters {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-5));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.filter-group h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.filter-search input {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter-options button {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.filter-options button:hover {
+  border-color: var(--accent-400);
+  color: var(--text-primary);
+}
+
+.filter-options button.is-active {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #fff;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.filter-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-500);
+  cursor: pointer;
+}
+
+/* ---- Resultados ---- */
+.catalog__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.catalog__toolbar #resultsCount {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.catalog__sort {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.catalog__sort select {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.catalog__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.active-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(139, 63, 245, 0.16);
+  color: var(--accent-300);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(139, 63, 245, 0.35);
+}
+
+.active-chip button {
+  font-size: 0.7rem;
+  color: var(--accent-300);
+}
+
+.catalog__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.catalog__empty i {
+  font-size: 2.4rem;
+  opacity: 0.4;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 1000px) {
+  .catalog__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog__filters {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+  }
+
+  .filter-group {
+    flex: 1 1 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog__filters {
+    flex-direction: column;
+  }
+
+  .catalog__toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

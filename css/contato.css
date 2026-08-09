@@ -1,0 +1,186 @@
+/* ==========================================================================
+   SHINKAI — contato.css
+   ========================================================================== */
+
+.contact {
+  padding-block: var(--space-10) var(--space-16);
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.contact__channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.channel-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-400);
+}
+
+.channel-card i {
+  font-size: 1.6rem;
+  color: var(--accent-400);
+  width: 44px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.channel-card strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.channel-card span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ---- FAQ ---- */
+.faq {
+  margin-top: var(--space-4);
+  padding: var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.faq h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+.faq details {
+  border-top: 1px solid var(--border-subtle);
+  padding-block: var(--space-3);
+}
+
+.faq details:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq summary::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.faq details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq details p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: var(--space-3);
+  line-height: 1.6;
+}
+
+/* ---- Formulário ---- */
+.contact-form {
+  padding: var(--space-6);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.contact-form h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+
+.contact-form .field {
+  margin-bottom: var(--space-4);
+}
+
+.contact-form .field label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-400);
+}
+
+.contact-form__feedback {
+  font-size: 0.85rem;
+  color: var(--success);
+  min-height: 1.2em;
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.contact-form__feedback.is-error {
+  color: var(--danger);
+}
+
+.contact-form__note {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 900px) {
+  .contact__inner {
+    grid-template-columns: 1fr;
+  }
+}

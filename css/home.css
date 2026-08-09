@@ -1,0 +1,387 @@
+/* ==========================================================================
+   SHINKAI — home.css
+   Estilos exclusivos da página inicial (hero, mais vendidas, estações,
+   ofertas, teaser sobre/blog). Requer base.css + components.css antes.
+   ========================================================================== */
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  padding-top: calc(var(--header-height) + var(--space-10));
+  padding-bottom: var(--space-12);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(139, 63, 245, 0.22), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(102, 28, 199, 0.14), transparent 60%),
+    var(--bg-base);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(320px, 480px) 1fr;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+
+.hero__desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 42ch;
+  margin-bottom: var(--space-8);
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.hero__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+}
+
+.hero__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out);
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero__glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 70% 30%, rgba(154, 63, 251, 0.35), transparent 55%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hero__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.hero__dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__dots button.is-active {
+  background: var(--accent-gradient);
+  transform: scale(1.3);
+}
+
+/* ---- Benefícios ---- */
+.perks {
+  border-block: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+}
+
+.perks__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.perk i {
+  font-size: 1.4rem;
+  color: var(--accent-400);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.perk strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.perk span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---- Mais vendidas ---- */
+.featured {
+  padding-block: var(--space-16) var(--space-12);
+}
+
+.featured__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+/* ---- Estações ---- */
+.seasons {
+  padding-block: var(--space-12);
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.seasons__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.season-card {
+  position: relative;
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.season-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--season-color, var(--accent-400));
+}
+
+.season-card i {
+  font-size: 1.8rem;
+  color: var(--season-color, var(--accent-400));
+  margin-bottom: var(--space-4);
+}
+
+.season-card h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.season-card span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.season-card::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.season-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- Melhores preços ---- */
+.deals {
+  padding-block: var(--space-12);
+}
+
+.deals__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.deals__header h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+/* ---- Sobre (teaser) ---- */
+.about-teaser {
+  padding-block: var(--space-16);
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.about-teaser__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+.about-teaser__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: var(--shadow-md);
+}
+
+.about-teaser__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-teaser__content h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+
+.about-teaser__content p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  max-width: 52ch;
+}
+
+/* ---- Blog (teaser) ---- */
+.blog-teaser {
+  padding-block: var(--space-12);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ---- Newsletter CTA (home usa uma versão em destaque) ---- */
+.newsletter-cta {
+  padding-block: var(--space-12);
+}
+
+.newsletter-cta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(120deg, rgba(139, 63, 245, 0.16), rgba(15, 14, 21, 0.4));
+  border: 1px solid var(--border-subtle);
+}
+
+.newsletter-cta h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.newsletter-cta p {
+  color: var(--text-secondary);
+}
+
+.newsletter-cta .newsletter-form {
+  width: min(380px, 100%);
+}
+
+.newsletter-cta .newsletter-form__feedback {
+  width: 100%;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 1100px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .hero__media {
+    order: -1;
+    aspect-ratio: 16 / 10;
+  }
+  .about-teaser__inner {
+    grid-template-columns: 1fr;
+  }
+  .about-teaser__media {
+    aspect-ratio: 16 / 10;
+  }
+  .seasons__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .perks__grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-6);
+  }
+  .newsletter-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: calc(var(--header-height) + var(--space-6));
+    padding-bottom: var(--space-8);
+  }
+  .perks__grid {
+    grid-template-columns: 1fr;
+  }
+  .seasons__grid {
+    grid-template-columns: 1fr;
+  }
+  .deals__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

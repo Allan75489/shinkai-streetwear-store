@@ -1,0 +1,165 @@
+/* ==========================================================================
+   SHINKAI — login.css
+   ========================================================================== */
+
+.auth {
+  padding-top: calc(var(--header-height) + var(--space-10));
+  padding-bottom: var(--space-16);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 0%, rgba(139, 63, 245, 0.16), transparent 60%),
+    var(--bg-base);
+}
+
+.auth__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.auth__box {
+  width: min(420px, 100%);
+  padding: var(--space-8);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.auth__tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  background: var(--bg-elevated);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+}
+
+.auth__tab {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.auth__tab.is-active {
+  background: var(--accent-gradient);
+  color: #fff;
+}
+
+.auth-form .field {
+  margin-bottom: var(--space-4);
+}
+
+.auth-form .field label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.auth-form input:focus {
+  border-color: var(--accent-400);
+}
+
+.auth-form__feedback {
+  font-size: 0.82rem;
+  color: var(--danger);
+  min-height: 1.2em;
+  margin-bottom: var(--space-3);
+}
+
+.auth-form__feedback.is-success {
+  color: var(--success);
+}
+
+.auth-form__hint {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: var(--space-5);
+}
+
+.link-btn {
+  color: var(--accent-300);
+  font-weight: 600;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+.auth__disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.auth__disclaimer i {
+  color: var(--accent-400);
+  margin-top: 2px;
+}
+
+/* ---- Estado logado ---- */
+#authLogged {
+  text-align: center;
+}
+
+.auth__avatar {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+#authLogged h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.auth__email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.auth__logged-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.auth__logged-links .btn {
+  justify-content: center;
+}
