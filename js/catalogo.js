@@ -1,9 +1,3 @@
-/* ==========================================================================
-   SHINKAI — catalogo.js
-   Filtros combináveis (categoria, estação, preço, desconto, busca, favoritos)
-   + ordenação + chips de filtro ativo + leitura de parâmetros da URL.
-   ========================================================================== */
-
 (function () {
   "use strict";
 

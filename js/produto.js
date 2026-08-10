@@ -1,9 +1,3 @@
-/* ==========================================================================
-   SHINKAI — produto.js
-   Lê ?id= da URL, renderiza detalhes do produto, galeria, seleção de
-   tamanho/quantidade, adicionar ao carrinho, favoritos e relacionados.
-   ========================================================================== */
-
 (function () {
   "use strict";
 

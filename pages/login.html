@@ -11,10 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/login.css" />
-  <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+  <link rel="icon" href="../assets/logo.png" type="image/png" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
@@ -26,16 +26,16 @@
       <nav class="nav" id="navMenu" aria-label="Navegação principal">
         <ul class="nav__list">
           <li><a href="../index.html" class="nav__link" data-nav-link>Início</a></li>
-          <li><a href="../catalogo.html" class="nav__link" data-nav-link>Catálogo</a></li>
-          <li><a href="../sobre.html" class="nav__link" data-nav-link>Sobre</a></li>
-          <li><a href="../blog.html" class="nav__link" data-nav-link>Blog</a></li>
-          <li><a href="../contato.html" class="nav__link" data-nav-link>Contato</a></li>
+          <li><a href="catalogo.html" class="nav__link" data-nav-link>Catálogo</a></li>
+          <li><a href="sobre.html" class="nav__link" data-nav-link>Sobre</a></li>
+          <li><a href="blog.html" class="nav__link" data-nav-link>Blog</a></li>
+          <li><a href="contato.html" class="nav__link" data-nav-link>Contato</a></li>
         </ul>
       </nav>
       <div class="header__actions">
         <button class="icon-btn" id="searchToggle" aria-label="Buscar produtos" aria-haspopup="dialog"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <a href="../catalogo.html?view=favoritos" class="icon-btn" id="wishlistToggle" aria-label="Ver favoritos"><i class="fa-solid fa-heart"></i><span class="badge" id="wishlistCount" hidden>0</span></a>
-        <a href="../login.html" class="icon-btn is-active" aria-label="Entrar ou cadastrar"><i class="fa-solid fa-user"></i></a>
+        <a href="catalogo.html?view=favoritos" class="icon-btn" id="wishlistToggle" aria-label="Ver favoritos"><i class="fa-solid fa-heart"></i><span class="badge" id="wishlistCount" hidden>0</span></a>
+        <a href="login.html" class="icon-btn is-active" aria-label="Entrar ou cadastrar"><i class="fa-solid fa-user"></i></a>
         <button class="icon-btn" id="cartToggle" aria-label="Abrir carrinho" aria-haspopup="dialog"><i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cartCount" hidden>0</span></button>
       </div>
     </div>
@@ -59,7 +59,7 @@
     <div class="cart-drawer__footer" id="cartFooter">
       <div class="cart-drawer__subtotal"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
       <p class="cart-drawer__hint">Frete grátis acima de R$199.</p>
-      <a href="../carrinho.html" class="btn btn--primary btn--block">Ver carrinho completo</a>
+      <a href="carrinho.html" class="btn btn--primary btn--block">Ver carrinho completo</a>
     </div>
   </aside>
 
@@ -125,8 +125,8 @@
             <h1 id="loggedGreeting">Olá!</h1>
             <p id="loggedEmail" class="auth__email"></p>
             <div class="auth__logged-links">
-              <a href="../carrinho.html" class="btn btn--outline btn--block"><i class="fa-solid fa-cart-shopping"></i> Ver meu carrinho</a>
-              <a href="../catalogo.html?view=favoritos" class="btn btn--outline btn--block"><i class="fa-solid fa-heart"></i> Meus favoritos</a>
+              <a href="carrinho.html" class="btn btn--outline btn--block"><i class="fa-solid fa-cart-shopping"></i> Ver meu carrinho</a>
+              <a href="catalogo.html?view=favoritos" class="btn btn--outline btn--block"><i class="fa-solid fa-heart"></i> Meus favoritos</a>
               <button class="btn btn--primary btn--block" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</button>
             </div>
           </div>
@@ -143,8 +143,8 @@
         <p>Mais que roupas, uma identidade.<br />Sinta a evolução. Vista SHINKAI.</p>
         <div class="footer__social"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a href="mailto:contato@shinkai.com.br" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a></div>
       </div>
-      <nav class="footer__col" aria-label="Links rápidos"><h3>Links rápidos</h3><ul><li><a href="../index.html">Início</a></li><li><a href="../catalogo.html">Catálogo</a></li><li><a href="../sobre.html">Sobre nós</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contato.html">Contato</a></li></ul></nav>
-      <nav class="footer__col" aria-label="Ajuda"><h3>Ajuda</h3><ul><li><a href="../carrinho.html">Carrinho</a></li><li><a href="../login.html">Minha conta</a></li><li><a href="../contato.html">Perguntas frequentes</a></li><li><a href="../contato.html">Trocas e devoluções</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Links rápidos"><h3>Links rápidos</h3><ul><li><a href="../index.html">Início</a></li><li><a href="catalogo.html">Catálogo</a></li><li><a href="sobre.html">Sobre nós</a></li><li><a href="blog.html">Blog</a></li><li><a href="contato.html">Contato</a></li></ul></nav>
+      <nav class="footer__col" aria-label="Ajuda"><h3>Ajuda</h3><ul><li><a href="carrinho.html">Carrinho</a></li><li><a href="login.html">Minha conta</a></li><li><a href="contato.html">Perguntas frequentes</a></li><li><a href="contato.html">Trocas e devoluções</a></li></ul></nav>
       <div class="footer__col footer__newsletter">
         <h3>Receba novidades</h3><p>Assine nossa newsletter e receba descontos exclusivos!</p>
         <form class="newsletter-form" data-newsletter novalidate>

@@ -44,6 +44,10 @@ window.Shinkai = (function () {
 
   const qs = (name) => new URLSearchParams(window.location.search).get(name);
 
+  // Gera links corretos tanto para a raiz quanto para páginas dentro de /pages.
+  const pageUrl = (page, query = "") =>
+    window.location.pathname.includes("/pages/") ? `${page}${query}` : `pages/${page}${query}`;
+
   /* ------------------------------------------------------------------ */
   /* Estado global (em memória — sem localStorage)                       */
   /* ------------------------------------------------------------------ */
@@ -242,7 +246,7 @@ window.Shinkai = (function () {
       const emptyCta = $("#cartEmptyCta");
       if (emptyCta) {
         emptyCta.addEventListener("click", () => {
-          window.location.href = "catalogo.html";
+          window.location.href = pageUrl("catalogo.html");
         });
       }
     };
@@ -341,7 +345,7 @@ window.Shinkai = (function () {
                     data-wishlist-btn aria-label="Adicionar aos favoritos" aria-pressed="${isWished}">
               <i class="fa-${isWished ? "solid" : "regular"} fa-heart"></i>
             </button>
-            <a href="produto.html?id=${product.id}">
+            <a href="${pageUrl("produto.html", `?id=${product.id}`)}">
               <img src="${product.image}" alt="${product.name}" loading="lazy" />
               ${
                 product.gallery && product.gallery[1]
@@ -357,7 +361,7 @@ window.Shinkai = (function () {
           </div>
           <div class="product-card__body">
             <p class="product-card__anime">${product.anime}</p>
-            <h3 class="product-card__name"><a href="produto.html?id=${product.id}">${product.name}</a></h3>
+            <h3 class="product-card__name"><a href="${pageUrl("produto.html", `?id=${product.id}`)}">${product.name}</a></h3>
             <p class="product-card__price">
               ${formatBRL(product.price)}
               ${product.oldPrice ? `<small>${formatBRL(product.oldPrice)}</small>` : ""}
@@ -537,7 +541,7 @@ window.Shinkai = (function () {
       resultsEl.innerHTML = matches
         .map(
           (p) => `
-          <a class="search-result" href="produto.html?id=${p.id}">
+          <a class="search-result" href="${pageUrl("produto.html", `?id=${p.id}`)}">
             <img src="${p.image}" alt="${p.name}" loading="lazy" />
             <strong>${p.name}</strong>
             <span>${formatBRL(p.price)}</span>
@@ -706,6 +710,7 @@ window.Shinkai = (function () {
     seasonIcon,
     getProductById,
     qs,
+    pageUrl,
     Toast,
     Overlay,
     Cart,

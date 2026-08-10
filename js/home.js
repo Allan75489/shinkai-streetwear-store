@@ -89,7 +89,7 @@
     grid.innerHTML = SEASONS.map((season) => {
       const count = PRODUCTS.filter((p) => p.season === season.id).length;
       return `
-        <a class="season-card" href="catalogo.html?season=${season.id}" style="--season-color:${colors[season.id]}">
+        <a class="season-card" href="${window.Shinkai.pageUrl("catalogo.html", `?season=${season.id}`)}" style="--season-color:${colors[season.id]}">
           <i class="fa-solid ${season.icon}"></i>
           <h3>${season.label}</h3>
           <span>${count} peças disponíveis</span>
@@ -105,7 +105,7 @@
     grid.innerHTML = posts
       .map(
         (post) => `
-        <a class="blog-card" href="blog.html#${post.id}" data-reveal>
+        <a class="blog-card" href="${window.Shinkai.pageUrl("blog.html", `#${post.id}`)}" data-reveal>
           <div class="blog-card__media"><img src="${post.image}" alt="${post.title}" loading="lazy" /></div>
           <div class="blog-card__body">
             <span class="blog-card__category">${post.category}</span>
